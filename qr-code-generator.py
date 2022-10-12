@@ -43,7 +43,7 @@ with open(inputCSV) as csvfile:
     filedata = f.read()
     f.close()
 
-    f = open("Laser/typenschilder-pure.svg",'w')
+    f = open("Laser/typenschilder.svg",'w')
     f.write(filedata)
     f.close()
 
@@ -70,7 +70,7 @@ with open(inputCSV) as csvfile:
   # do stuff for each row from csv
     for row in reader:
         #parse newly saved file with data to replace
-        tree = etree.parse("Laser/typenschilder-pure.svg")
+        tree = etree.parse("Laser/typenschilder.svg")
         root = tree.getroot()
 
         # where are we?
@@ -211,7 +211,7 @@ with open(inputCSV) as csvfile:
                 
    
         # open file to replace serial numbers in plain text
-        f = open("Laser/typenschilder-pure.svg",'r')
+        f = open("Laser/typenschilder.svg",'r')
         filedata = f.read()
         f.close()
 
@@ -222,7 +222,7 @@ with open(inputCSV) as csvfile:
         newdata = newqrdata.replace(Serial, SerialString)     
                  
         # write and save - file will be opened again on next loop
-        f = open("Laser/typenschilder-pure.svg",'w')
+        f = open("Laser/typenschilder.svg",'w')
         f.write(newdata)
         f.close()
 
